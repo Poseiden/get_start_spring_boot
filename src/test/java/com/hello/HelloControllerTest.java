@@ -1,4 +1,4 @@
-package hello;
+package com.hello;
 
 import static org.hamcrest.Matchers.equalTo;
 
