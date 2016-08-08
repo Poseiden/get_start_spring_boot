@@ -13,16 +13,22 @@ public class HelloController {
     @Value("${authUrl}")
     private String authUrl;
 
+    @Value("${guessThat}")
+    private String guessThat;
+
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(){
-        System.out.println(authUrl);
         return "Hello Spring Boot!";
     }
 
     @RequestMapping(value="/welcome/{name}",method = RequestMethod.GET)
     public String welcome(@PathVariable String name) {
         return String.format("Welcome, %s",name);
+    }
 
+    @RequestMapping(value="/guessThat", method=RequestMethod.GET)
+    public String guessThat() {
+        return guessThat;
     }
 
 }
